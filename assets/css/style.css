@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cell {
+    /* Should only display 1 digit. Hence height = line height of .numbers and width = width of .numbers */
+    width: 0.60em;
+    height: 40px;
+    border: 1px solid #000;
+    font-size: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.numbers {
+    width: 0.6em;
+    line-height: 40px;
+    font-family: digital, arial, verdana;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* The digits move but don't look good. We will use steps now 10 digits = 10 steps. You can now see the digits swapping instead of moving pixel-by-pixel */
+    animation: move 1s steps(10, end) infinite;
+}
+
+/* Lets animate the digit now - the main part of this tutorial */
+/* We are using prefixfree, so no need of vendor prefixes */
+/* The logic of the animation is to alter the 'top' value of the absolutely positioned numbers */
+@keyframes move {
+    0% {
+        top: 0;
+    },
+
+    100% {
+        top: -400px; 
+        /* height = 40, digits = 10, hence -400 to move it completely to the top */
+    }
+}
+
+/* Lets use a better font for the numbers */
+@font-face {
+    font-family: 'digital';
+    src: url("http://thecodeplayer.com/uploads/fonts/DS-DIGI.TTF");
+}
