@@ -11,6 +11,7 @@
     font-size: 50px;
     overflow: hidden;
     position: relative;
+    float: left;
 }
 
 .numbers {
@@ -18,17 +19,49 @@
     line-height: 40px;
     font-family: digital, arial, verdana;
     text-align: center;
+
     position: absolute;
     top: 0;
     left: 0;
-    /* The digits move but don't look good. We will use steps now 10 digits = 10 steps. You can now see the digits swapping instead of moving pixel-by-pixel */
+}
+
+.moveten {
+    /* The digits move but don't look good. We will use steps now 
+    10 digits = 10 steps. You can now see the digits swapping instead of 
+    moving pixel-by-pixel */
     animation: move 1s steps(10, end) infinite;
+}
+
+.movesix {
+    animation: move 1s steps(6, end) infinite;
+}
+
+/* Now we need to syn the animation speed with time speed */
+/* One second per digit. 10 digits. Hence 10s */
+.second {
+    animation-duration: 10s;
+}
+
+.tensecond {
+    animation-duration: 100s;
+}
+
+.milisecond {
+    animation-duration: 10s;
+}
+
+.tenmilisecond {
+    animation-duration: 100s;
 }
 
 /* Lets animate the digit now - the main part of this tutorial */
 /* We are using prefixfree, so no need of vendor prefixes */
-/* The logic of the animation is to alter the 'top' value of the absolutely positioned numbers */
-@keyframes move {
+/* The logic of the animation is to alter the 'top' value of the absolutely 
+positioned numbers */
+/* Minutes and Seconds should be limited to only '60' and not '100' 
+Hence we need to create 2 animations. One with 10 steps and 10 digits 
+and the other one with 6 steps and 6 digits*/
+@keyframes moveten {
     0% {
         top: 0;
     },
@@ -36,6 +69,17 @@
     100% {
         top: -400px; 
         /* height = 40, digits = 10, hence -400 to move it completely to the top */
+    }
+}
+
+@keyframes movesix {
+    0% {
+        top: 0;
+    },
+
+    100% {
+        top: -240px; 
+        /* height = 40, digits = 6, hence -240 to move it completely to the top */
     }
 }
 
