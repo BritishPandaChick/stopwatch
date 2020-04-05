@@ -62,15 +62,35 @@ body {
     border-radius: 0 0 3px 3px;
 }
 
+input[name="controls"] {
+    display: none;
+}
+
+/* Control Code */
+#stop:checked~.time .numbers {
+    animation-play-state: paused;
+}
+
+#start:checked~.timer .numbers {
+    animation-play-state: running;
+}
+
+#reset:checked~.timer .numbers {
+    animation: none;
+}
+
 .moveten {
     /* The digits move but don't look good. We will use steps now 
     10 digits = 10 steps. You can now see the digits swapping instead of 
     moving pixel-by-pixel */
     animation: move 1s steps(10, end) infinite;
+    /* By default animation should be paused */
+    animation-play-state: paused;
 }
 
 .movesix {
     animation: move 1s steps(6, end) infinite;
+    animation-play-state: paused;
 }
 
 /* Now we need to sync the animation speed with time speed */
