@@ -1,11 +1,14 @@
 # Stopwatch
-CodePlayer Make a stopwatch using CSS3 without images or JavaScript project. Made with HTML and CSS.
+A stopwatch using CSS without images or JavaScript
+
+## Tech Stack
+- HTML
+- CSS
 
 ## Instructions
-Clone this repo or download zip file. Open index.html file in your browser.
-
-## Contributions
-This code is based on starter code from TheCodePlayer.com. Therefore I will not be accepting pull requests.
+1. Clone this repo or download zip file. 
+2. Open index.html file in your browser.
+3. A rectangular clock will be in the center of the screen. Click the start button to start the clock. To stop the clock, click the stop button. Press the reset button if you want the clock to go back to O.
 
 ## Acknowledgements
 * TheCodePlayer.com
